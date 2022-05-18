@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <ul>
+        <a href="/index">STARTSIDA</a>
+        <a href="/users">MEDLEMSLISTA</a>
+        <a href="/user">ANVÄNDARE</a>
+        <a href="/users/create">LÄGG TILL MEDLEM</a>
+      </ul>
+    </header>
+  </div>
+
+  <% users.forEach((user) => { %>
+    <ul>
+    <li>
+      <a href="/user/<%= user._id %>">
+        <%= user.name%>, Email:<%= user.email %>
+      </a>
+    </li>
+  </ul>
+  <% }); %>
+  <footer>
+    <div class="footer-contact">
+    <h2>Kontakta oss</h2>
+    <p>Email: fotbollsklubben@gmail.com</p>
+    <p>Telefon: 0723581441</p>
+  </div>
+</footer>
+<style>
+  body{
+      margin: 0;
+      padding: 0;
+  }
+.container {
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
+ font-family: Arial, Helvetica, sans-serif; 
+}
+ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li{
+  list-style-type:none
+  ;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20vw;
+}
+ul a {
+text-decoration: none;
+color: black;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+ul a:hover{
+    color: rgb(165, 165, 231);
+}
+.container h1{
+    margin: 40px auto;
+    font-size: 38px;
+}
+footer{
+  background-color: rgb(165, 165, 231);
+  margin: 0;
+  position:absolute;
+bottom:0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+</style>
+</body>
+</html>
